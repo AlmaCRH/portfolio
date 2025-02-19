@@ -1,209 +1,208 @@
 ---
-import astroLogo from '../assets/astro.svg';
-import background from '../assets/background.svg';
+import "../styles/global.css";
+const currentDate = new Date();
+const dayNumber = currentDate.getDate();
+const monthNumber = currentDate.toLocaleString("en-US", { month: "short" });
 ---
 
-<div id="container">
-	<img id="background" src={background.src} alt="" fetchpriority="high" />
-	<main>
-		<section id="hero">
-			<a href="https://astro.build"
-				><img src={astroLogo.src} width="115" height="48" alt="Astro Homepage" /></a
-			>
-			<h1>
-				To get started, open the <code><pre>src/pages</pre></code> directory in your project.
-			</h1>
-			<section id="links">
-				<a class="button" href="https://docs.astro.build">Read our docs</a>
-				<a href="https://astro.build/chat"
-					>Join our Discord <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 127.14 96.36"
-						><path
-							fill="currentColor"
-							d="M107.7 8.07A105.15 105.15 0 0 0 81.47 0a72.06 72.06 0 0 0-3.36 6.83 97.68 97.68 0 0 0-29.11 0A72.37 72.37 0 0 0 45.64 0a105.89 105.89 0 0 0-26.25 8.09C2.79 32.65-1.71 56.6.54 80.21a105.73 105.73 0 0 0 32.17 16.15 77.7 77.7 0 0 0 6.89-11.11 68.42 68.42 0 0 1-10.85-5.18c.91-.66 1.8-1.34 2.66-2a75.57 75.57 0 0 0 64.32 0c.87.71 1.76 1.39 2.66 2a68.68 68.68 0 0 1-10.87 5.19 77 77 0 0 0 6.89 11.1 105.25 105.25 0 0 0 32.19-16.14c2.64-27.38-4.51-51.11-18.9-72.15ZM42.45 65.69C36.18 65.69 31 60 31 53s5-12.74 11.43-12.74S54 46 53.89 53s-5.05 12.69-11.44 12.69Zm42.24 0C78.41 65.69 73.25 60 73.25 53s5-12.74 11.44-12.74S96.23 46 96.12 53s-5.04 12.69-11.43 12.69Z"
-						></path></svg
-					>
-				</a>
-			</section>
-		</section>
-	</main>
+<div class="font-display size-full">
+  <img
+    src="/frames/ezgif-frame-001.jpg"
+    id="background"
+    class="fixed top-0 left-0 size-full object-cover z-[-1]"
+  />
+  <header class="p-6">
+    <nav
+      class="flex justify-between items-center m-1 border-b-1 border-white p-4"
+    >
+      <div>
+        <a class="sm:p-2"
+          ><h6 class="font-bebas nav-text text-md sm:text-2xl">
+            Alma Cruz Hernández
+          </h6></a
+        >
+        <h6 class="text-white font-bebas hidden sm:inline">
+          FULL STACK WEB DEVELOPER
+        </h6>
+      </div>
+      <div>
+        <ul>
+          <li class="nav-text text-md sm:text-lg"><a>about</a></li>
+          <li class="nav-text text-md sm:text-lg"><a>works</a></li>
+          <li class="nav-text text-md sm:text-lg"><a>contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main class="size-full">
+    <div class="text-white absolute flex flex-row top-[13%] right-[20%]">
+      <div class="inline-block">
+        <span class="text-8xl font-display font-extrabold">{dayNumber}</span>
+      </div>
 
-	<a href="https://astro.build/blog/astro-5/" id="news" class="box">
-		<svg width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg"
-			><path
-				d="M24.667 12c1.333 1.414 2 3.192 2 5.334 0 4.62-4.934 5.7-7.334 12C18.444 28.567 18 27.456 18 26c0-4.642 6.667-7.053 6.667-14Zm-5.334-5.333c1.6 1.65 2.4 3.43 2.4 5.333 0 6.602-8.06 7.59-6.4 17.334C13.111 27.787 12 25.564 12 22.666c0-4.434 7.333-8 7.333-16Zm-6-5.333C15.111 3.555 16 5.556 16 7.333c0 8.333-11.333 10.962-5.333 22-3.488-.774-6-4-6-8 0-8.667 8.666-10 8.666-20Z"
-				fill="#111827"></path></svg
-		>
-		<h2>What's New in Astro 5.0?</h2>
-		<p>
-			From content layers to server islands, click to learn more about the new features and
-			improvements in Astro 5.0
-		</p>
-	</a>
+      <div class="flex flex-col justify-center w-fit">
+        <span class="text-lg block font-extrabold">{monthNumber}</span>
+        <span class="text-md">Available</span>
+        <span class="text-md">for work</span>
+      </div>
+    </div>
+
+    <div class="pt-[30%] pl-[5%] pr-[5%] flex justify-evenly flex-col">
+      <div>
+        <div>
+          <span class="text-[#f3f0b8] font-extrabold text-xl">FULL STACK </span>
+        </div>
+        <div class="line">
+          <span class="font-bebas text-extrabold text-[#fdf9ad] text-8xl"
+            >WEB</span
+          >
+        </div>
+        <div class="line">
+          <span class="font-bebas text-extrabold text-[#fdf9ad] text-8xl"
+            >DEVELOPER</span
+          >
+        </div>
+      </div>
+      <div class="text-white flex flex-col text-end w-full font-display">
+        <span class="uppercase"
+          >I'm a full stack developer based in Gran Canaria.</span
+        >
+        <span class="uppercase"
+          >With one year of experience in the industry</span
+        >
+        <span class="uppercase"
+          >and a passion for web development. I keep learning</span
+        >
+        <span class="uppercase">and improving my skills every day.</span>
+        <button
+          class="bg-[#f3f0b800] border-1 border-[#f3f0b8] text-[#f3f0b8] p-2.5 rounded-[50px] text-lg font-extrabold self-end mt-5 mr-5 w-44 cursor-pointer"
+          >CONTACT ME</button
+        >
+      </div>
+    </div>
+    <div class="main-content">
+      <section id="about-section">
+        <span class="line-about">HELLO. I'M ALMA</span>
+        <span>I l</span>
+        <p></p>
+      </section>
+      <section id="works-section"></section>
+      <section id="contact-section"></section>
+    </div>
+  </main>
 </div>
 
 <style>
-	#background {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		z-index: -1;
-		filter: blur(100px);
-	}
+  .main-title {
+    padding-top: 50vh;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .content {
+    color: white;
+  }
+  .main-content {
+    padding-top: 20vh;
+    padding: 20vh 20vw 0 20vw;
+  }
 
-	#container {
-		font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
-		height: 100%;
-	}
+  .contact-button {
+    background-color: #f3f0b800;
+    border: 1px solid #f3f0b8;
+    color: #f3f0b8;
+    padding: 10px;
+    border-radius: 50px;
+    font-size: 2vw;
+    align-self: flex-end;
+    margin-top: 20px;
+    margin-right: 20px;
+    width: 15vw;
+    font-weight: 800;
+    cursor: pointer;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    text-align: end;
+  }
+  /*   .content span {
+    font-size: 2vw;
+    text-transform: uppercase;
+  } */
 
-	main {
-		height: 100%;
-		display: flex;
-		justify-content: center;
-	}
+  #about-section {
+  }
+  .line-about {
+    color: white;
+    font-family: "Bebas Neue", serif;
+    font-size: 3vw;
+  }
 
-	#hero {
-		display: flex;
-		align-items: start;
-		flex-direction: column;
-		justify-content: center;
-		padding: 16px;
-	}
+  /*   .availability-section {
+    color: white;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    top: 13%;
+    right: 20vw;
+  } */
 
-	h1 {
-		font-size: 22px;
-		margin-top: 0.25em;
-	}
+  .month-number {
+    font-size: 1vw;
+    font-weight: 800;
+    display: block;
+  }
+  .day-number {
+    font-size: 10vw;
+    font-style: "Bebas Neue", serif;
+    font-weight: 800;
+  }
+  /*  .date {
+    display: inline-block;
+  } */
+  .label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: fit-content;
+  }
+  /*   .top-title > span {
+    color: #f3f0b8;
+    font-weight: 800;
+    font-size: 2vw;
+  } */
 
-	#links {
-		display: flex;
-		gap: 16px;
-	}
-
-	#links a {
-		display: flex;
-		align-items: center;
-		padding: 10px 12px;
-		color: #111827;
-		text-decoration: none;
-		transition: color 0.2s;
-	}
-
-	#links a:hover {
-		color: rgb(78, 80, 86);
-	}
-
-	#links a svg {
-		height: 1em;
-		margin-left: 8px;
-	}
-
-	#links a.button {
-		color: white;
-		background: linear-gradient(83.21deg, #3245ff 0%, #bc52ee 100%);
-		box-shadow:
-			inset 0 0 0 1px rgba(255, 255, 255, 0.12),
-			inset 0 -2px 0 rgba(0, 0, 0, 0.24);
-		border-radius: 10px;
-	}
-
-	#links a.button:hover {
-		color: rgb(230, 230, 230);
-		box-shadow: none;
-	}
-
-	pre {
-		font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas,
-			'DejaVu Sans Mono', monospace;
-		font-weight: normal;
-		background: linear-gradient(14deg, #d83333 0%, #f041ff 100%);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-clip: text;
-		margin: 0;
-	}
-
-	h2 {
-		margin: 0 0 1em;
-		font-weight: normal;
-		color: #111827;
-		font-size: 20px;
-	}
-
-	p {
-		color: #4b5563;
-		font-size: 16px;
-		line-height: 24px;
-		letter-spacing: -0.006em;
-		margin: 0;
-	}
-
-	code {
-		display: inline-block;
-		background:
-			linear-gradient(66.77deg, #f3cddd 0%, #f5cee7 100%) padding-box,
-			linear-gradient(155deg, #d83333 0%, #f041ff 18%, #f5cee7 45%) border-box;
-		border-radius: 8px;
-		border: 1px solid transparent;
-		padding: 6px 8px;
-	}
-
-	.box {
-		padding: 16px;
-		background: rgba(255, 255, 255, 1);
-		border-radius: 16px;
-		border: 1px solid white;
-	}
-
-	#news {
-		position: absolute;
-		bottom: 16px;
-		right: 16px;
-		max-width: 300px;
-		text-decoration: none;
-		transition: background 0.2s;
-		backdrop-filter: blur(50px);
-	}
-
-	#news:hover {
-		background: rgba(255, 255, 255, 0.55);
-	}
-
-	@media screen and (max-height: 368px) {
-		#news {
-			display: none;
-		}
-	}
-
-	@media screen and (max-width: 768px) {
-		#container {
-			display: flex;
-			flex-direction: column;
-		}
-
-		#hero {
-			display: block;
-			padding-top: 10%;
-		}
-
-		#links {
-			flex-wrap: wrap;
-		}
-
-		#links a.button {
-			padding: 14px 18px;
-		}
-
-		#news {
-			right: 16px;
-			left: 16px;
-			bottom: 2.5rem;
-			max-width: 100%;
-		}
-
-		h1 {
-			line-height: 1.5;
-		}
-	}
+  /*   .top-title > span,
+  .line > span {
+    font-family: "Bebas Neue", serif;
+    font-weight: 800;
+  }
+  .line > span {
+    color: #fdf9ad;
+    font-size: 9vw;
+    font-weight: 800;
+    letter-spacing: 10px;
+  } */
 </style>
+
+<script>
+  const img = document.getElementById("background");
+
+  const max_frames = 100;
+  let max_scroll = document.documentElement.scrollHeight - window.innerHeight;
+
+  window.addEventListener("resize", () => {
+    max_scroll = document.documentElement.scrollHeight - window.innerHeight;
+  });
+
+  window.addEventListener("scroll", () => {
+    const scroll_position = window.scrollY;
+    const scroll_fraction = scroll_position / max_scroll;
+
+    const frame = Math.floor(scroll_fraction * max_frames) || 1;
+
+    const id = frame.toString().padStart(3, "0");
+    img.src = `/frames/ezgif-frame-${id}.jpg`;
+  });
+</script>
