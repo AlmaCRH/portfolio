@@ -228,31 +228,28 @@ const monthNumber = currentDate.toLocaleString("en-US", { month: "short" });
       </section>
     </div>
   </main>
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-    #background {
-      will-change: background-position;
-    }
-  </style>
 
   <script>
     const img = document.getElementById("background");
     const header = document.getElementById("header");
+
     let images = [];
     const max_frames = 100;
     let max_scroll = document.documentElement.scrollHeight - window.innerHeight;
-
-    window.addEventListener("resize", () => {
-      max_scroll = document.documentElement.scrollHeight - window.innerHeight;
-    });
 
     for (let i = 1; i <= max_frames; i++) {
       images[i] = new Image();
       images[i].src =
         `/frames/ezgif-frame-${i.toString().padStart(3, "0")}.webp`;
     }
+
+    window.addEventListener("scroll", () => {
+      requestAnimationFrame(updateAnimation);
+    });
+    window.addEventListener("resize", () => {
+      max_scroll = document.documentElement.scrollHeight - window.innerHeight;
+    });
+
     const updateAnimation = () => {
       const scroll_position = window.scrollY;
       const scroll_fraction = scroll_position / max_scroll;
@@ -268,9 +265,5 @@ const monthNumber = currentDate.toLocaleString("en-US", { month: "short" });
         header.classList.remove("backdrop-blur-md");
       }
     };
-
-    window.addEventListener("scroll", () => {
-      requestAnimationFrame(updateAnimation);
-    });
   </script>
 </div>
