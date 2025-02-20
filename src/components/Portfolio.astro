@@ -6,7 +6,7 @@ const monthNumber = currentDate.toLocaleString("en-US", { month: "short" });
 
 <div id="landing" class="font-display size-full">
   <img
-    src="/frames/ezgif-frame-001.jpg"
+    src="/frames/ezgif-frame-001.webp"
     id="background"
     class="fixed top-0 left-0 size-full object-cover z-[-1]"
   />
@@ -249,7 +249,7 @@ const monthNumber = currentDate.toLocaleString("en-US", { month: "short" });
       const frame = Math.floor(scroll_fraction * max_frames) || 1;
 
       const id = frame.toString().padStart(3, "0");
-      img.src = `/frames/ezgif-frame-${id}.jpg`;
+      img.src = `/frames/ezgif-frame-${id}.webp`;
 
       if (scroll_position !== 0) {
         header.classList.add("backdrop-blur-md");
