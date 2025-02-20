@@ -1,27 +1,5 @@
 @import "tailwindcss";
 
-/* @import "tailwindcss";
-
-@theme: {
-  --font-display: "Noto Sans", system-ui, Avenir, "Helvetica Neue", "Arial Nova",
-    "Nimbus Sans", Arial, sans-serif;
-  --font-bebas: "Bebas Neue", sans-serif;
-};
-
-.nav-text {
-  @apply text-white inline text-[0.8em];
-} */
-
-/* @theme: {
-    extend:{
-        fontFamily:{
-            display:["Noto Sans", system-ui, Avenir, "Helvetica Neue", "Arial Nova",
-                    "Nimbus Sans", Arial, sans-serif],
-            bebas:["Bebas Neue", sans-serif]
-        }
-    }
-
-} */
 @theme {
   --font-display: "Noto Sans", system-ui, Avenir, "Helvetica Neue", "Arial Nova",
     "Nimbus Sans", Arial, sans-serif;
