@@ -5,37 +5,43 @@ const dayNumber = currentDate.getDate();
 const monthNumber = currentDate.toLocaleString("en-US", { month: "short" });
 ---
 
-<div class="font-display size-full">
+<div id="home" class="font-display size-full">
   <img
     src="/frames/ezgif-frame-001.jpg"
     id="background"
     class="fixed top-0 left-0 size-full object-cover z-[-1]"
   />
-  <header class="p-6">
+  <header id="header" class="p-6 pb-0 fixed w-full z-10">
     <nav
       class="flex justify-between items-center m-1 border-b-1 border-white p-4"
     >
       <div>
-        <a class="sm:p-2"
+        <a href="#home" class="sm:p-2"
           ><h6 class="font-bebas nav-text text-md sm:text-2xl">
             Alma Cruz Hernández
           </h6></a
         >
-        <h6 class="text-white font-bebas hidden sm:inline">
+        <h6 class="text-white font-bebas hidden sm:inline sm:text-lg">
           FULL STACK WEB DEVELOPER
         </h6>
       </div>
       <div>
         <ul>
-          <li class="nav-text text-md sm:text-lg"><a>about</a></li>
-          <li class="nav-text text-md sm:text-lg"><a>works</a></li>
-          <li class="nav-text text-md sm:text-lg"><a>contact</a></li>
+          <li class="nav-text text-md sm:text-lg">
+            <a href="#about-section">about</a>
+          </li>
+          <li class="nav-text text-md sm:text-lg">
+            <a href="#works-section">works</a>
+          </li>
+          <li class="nav-text text-md sm:text-lg">
+            <a href="#contact-section">contact</a>
+          </li>
         </ul>
       </div>
     </nav>
   </header>
   <main class="size-full">
-    <div class="text-white absolute flex flex-row top-[13%] right-[20%]">
+    <div class="text-white absolute flex flex-row top-[18%] right-[20%]">
       <div class="inline-block">
         <span class="text-8xl font-display font-extrabold">{dayNumber}</span>
       </div>
@@ -47,52 +53,152 @@ const monthNumber = currentDate.toLocaleString("en-US", { month: "short" });
       </div>
     </div>
 
-    <div class="pt-[30%] pl-[5%] pr-[5%] flex justify-evenly flex-col">
+    <div
+      class="pt-[75%] pl-[5%] pr-[5%] flex justify-evenly flex-col sm:pt-[50%]"
+    >
       <div>
         <div>
-          <span class="text-[#f3f0b8] font-extrabold text-xl">FULL STACK </span>
+          <span class="text-[#f3f0b8] font-extrabold text-xl sm:text-2xl"
+            >FULL STACK
+          </span>
         </div>
         <div class="line">
-          <span class="font-bebas text-extrabold text-[#fdf9ad] text-8xl"
+          <span
+            class="font-bebas text-extrabold text-[#fdf9ad] text-8xl sm:text-9xl"
             >WEB</span
           >
         </div>
         <div class="line">
-          <span class="font-bebas text-extrabold text-[#fdf9ad] text-8xl"
+          <span
+            class="font-bebas text-extrabold text-[#fdf9ad] text-8xl sm:text-9xl"
             >DEVELOPER</span
           >
         </div>
       </div>
-      <div class="text-white flex flex-col text-end w-full font-display">
-        <span class="uppercase"
-          >I'm a full stack developer based in Gran Canaria.</span
+      <div
+        class="text-white flex flex-col text-start w-full font-display mt-5 sm:text-xl"
+      >
+        <div class="uppercase text-end pr-1.5">I'm a full stack developer</div>
+        <span class="uppercase text-right">
+          based in Gran Canaria. With one year of experience in the industry and
+          a passion for web development. I keep learning and improving my skills
+          every day.</span
         >
-        <span class="uppercase"
-          >With one year of experience in the industry</span
-        >
-        <span class="uppercase"
-          >and a passion for web development. I keep learning</span
-        >
-        <span class="uppercase">and improving my skills every day.</span>
+        <span class="uppercase"></span>
+        <span class="uppercase"></span>
         <button
-          class="bg-[#f3f0b800] border-1 border-[#f3f0b8] text-[#f3f0b8] p-2.5 rounded-[50px] text-lg font-extrabold self-end mt-5 mr-5 w-44 cursor-pointer"
+          class="bg-[#f3f0b800] border-1 border-[#f3f0b8] text-[#f3f0b8] p-2.5 rounded-[50px] text-lg font-extrabold self-end mt-5 w-44 cursor-pointer sm:w-52 sm:text-xl"
           >CONTACT ME</button
         >
       </div>
     </div>
-    <div class="main-content">
+    <div class="pt-[20vh] pl-[5%] pr-[5%] pb-0 text-start h-full">
       <section id="about-section">
-        <span class="line-about">HELLO. I'M ALMA</span>
-        <span>I l</span>
-        <p></p>
+        <span class="line-about text-[#fdf9ad] font-bebas text-7xl sm:text-8xl"
+          >HELLO. I'M ALMA</span
+        >
+        <p class="text-white sm:text-xl">
+          I use my passion and skills to create digital experiences that are
+          intuitive, efficient, and impactful, leveraging technology to solve
+          real-world problems and enhance user interactions.
+        </p>
       </section>
-      <section id="works-section"></section>
-      <section id="contact-section"></section>
+      <section id="works-section" class="mt-20">
+        <span class="uppercase text-[#f3f0b8] text-2xl cursor-pointer"
+          >Selected works</span
+        >
+        <div class="text-center mt-5">
+          <span
+            class="text-white font-bebas text-7xl cursor-pointer hover:text-[#fdf9ad] active:text-[#fdf9ad]"
+            >Edukami.ai</span
+          >
+        </div>
+        <div class="text-center mt-5">
+          <span
+            class="text-white font-bebas text-7xl cursor-pointer hover:text-[#fdf9ad]"
+            >Reboot Talent</span
+          >
+        </div>
+        <div class="text-center mt-5">
+          <span
+            class="text-white font-bebas text-7xl cursor-pointer hover:text-[#fdf9ad]"
+            >WISE-C</span
+          >
+        </div>
+        <div class="text-center mt-5">
+          <span
+            class="text-white font-bebas text-7xl cursor-pointer hover:text-[#fdf9ad]"
+            >AfricaNdoto FrontEnd</span
+          >
+        </div>
+        <div class="text-center mt-5">
+          <span
+            class="text-white font-bebas text-7xl cursor-pointer hover:text-[#fdf9ad]"
+            >AfricaNdoto BackEnd</span
+          >
+        </div>
+        <div class="text-center mt-5">
+          <span
+            class="text-white font-bebas text-7xl cursor-pointer hover:text-[#fdf9ad]"
+            >Demons Defender</span
+          >
+        </div>
+        <div class="flex justify-center">
+          <button
+            class="bg-[#f3f0b800] border-1 border-[#f3f0b8] text-[#f3f0b8] p-2.5 rounded-[50px] text-lg font-extrabold self-end mt-5 w-44 cursor-pointer sm:w-52 sm:text-xl"
+            >CONTACT ME</button
+          >
+        </div>
+      </section>
+      <section id="contact-section" class="mt-20">
+        <div
+          class="font-bebas text-[#f3f0b8] text-7xl flex flex-col sm:text-8xl"
+        >
+          <span>Let's</span>
+          <span>contact</span>
+        </div>
+        <span class="text-white text-xl uppercase sm:text-2xl"
+          >I'm interested in</span
+        >
+        <div class="space-y-3 mt-5 w-full">
+          <button class="uppercase bg-[#fdf9ad] border-1 rounded-4xl w-fit p-2"
+            >Frontend development</button
+          >
+          <button class="uppercase bg-[#fdf9ad] border-1 rounded-4xl w-fit p-2"
+            >Backend development</button
+          >
+          <button class="uppercase bg-[#fdf9ad] border-1 rounded-4xl w-fit p-2"
+            >Fullstack development</button
+          >
+          <button class="uppercase bg-[#fdf9ad] border-1 rounded-4xl w-fit p-2"
+            >Wordpress development</button
+          >
+          <button class="uppercase bg-[#fdf9ad] border-1 rounded-4xl w-fit p-2"
+            >Coffee</button
+          >
+        </div>
+        <div class="flex justify-center mt-5 items-center space-x-5">
+          <span class="text-white uppercase sm:text-xl"
+            >Are you minding a project?</span
+          >
+          <button
+            class="bg-[#f3f0b800] border-1 border-[#f3f0b8] text-[#f3f0b8] p-2.5 rounded-[50px] text-lg font-extrabold self-end w-44 cursor-pointer sm:w-52 sm:text-xl"
+            >CONTACT ME</button
+          >
+        </div>
+
+        <div class="w-full h-2 border-b-1 border-white mt-5 sm:mt-3"></div>
+        <div class="mt-1 space-x-5 text-white uppercase">
+          <span>Linkedin</span><span>Github</span>
+        </div>
+      </section>
     </div>
   </main>
 </div>
-
 <style>
+  html {
+    scroll-behavior: smooth;
+  }
   .main-title {
     padding-top: 50vh;
     display: flex;
@@ -100,10 +206,6 @@ const monthNumber = currentDate.toLocaleString("en-US", { month: "short" });
   }
   .content {
     color: white;
-  }
-  .main-content {
-    padding-top: 20vh;
-    padding: 20vh 20vw 0 20vw;
   }
 
   .contact-button {
@@ -130,14 +232,6 @@ const monthNumber = currentDate.toLocaleString("en-US", { month: "short" });
     font-size: 2vw;
     text-transform: uppercase;
   } */
-
-  #about-section {
-  }
-  .line-about {
-    color: white;
-    font-family: "Bebas Neue", serif;
-    font-size: 3vw;
-  }
 
   /*   .availability-section {
     color: white;
@@ -188,7 +282,7 @@ const monthNumber = currentDate.toLocaleString("en-US", { month: "short" });
 
 <script>
   const img = document.getElementById("background");
-
+  const header = document.getElementById("header");
   const max_frames = 100;
   let max_scroll = document.documentElement.scrollHeight - window.innerHeight;
 
@@ -204,5 +298,11 @@ const monthNumber = currentDate.toLocaleString("en-US", { month: "short" });
 
     const id = frame.toString().padStart(3, "0");
     img.src = `/frames/ezgif-frame-${id}.jpg`;
+
+    if (scroll_position !== 0) {
+      header.classList.add("backdrop-blur-md");
+    } else {
+      header.classList.remove("backdrop-blur-md");
+    }
   });
 </script>
