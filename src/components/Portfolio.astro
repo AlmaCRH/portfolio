@@ -6,11 +6,11 @@ const monthNumber = currentDate.toLocaleString("en-US", { month: "short" });
 
 <div
   id="loader-wrapper"
-  class="flex bg-neutral-950 justify-center items-center w-full h-full"
+  class="bg-neutral-950 justify-center items-center w-full h-full"
 >
   <div class="loader"></div>
 </div>
-<div id="landing" class="font-display size-full hidden">
+<div id="landing" class="font-display size-full">
   <img
     src="/frames/ezgif-frame-001.webp"
     id="background"
@@ -250,16 +250,11 @@ const monthNumber = currentDate.toLocaleString("en-US", { month: "short" });
       images[i].src =
         `/frames/ezgif-frame-${i.toString().padStart(3, "0")}.webp`;
       if (i === max_frames) {
-        loaderWrapper?.classList.add("hidden");
-        loaderWrapper?.classList.remove("flex");
-        landing?.classList.add("block");
-        landing?.classList.remove("hidden");
+        loaderWrapper.style.display = "none";
+        landing.style.display = "block";
       } else {
-        loaderWrapper?.classList.add("flex");
-        loaderWrapper?.classList.remove("hidden");
-        landing?.classList.remove("block");
-
-        landing?.classList.add("hidden");
+        loaderWrapper.style.display = "flex";
+        landing.style.display = "none";
       }
     }
 

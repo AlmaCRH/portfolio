@@ -13,6 +13,13 @@ html {
   scroll-behavior: smooth;
 }
 
+#loader-wrapper {
+  display: flex;
+}
+#landing {
+  display: none;
+}
+
 .loader {
   position: relative;
   display: flex;
