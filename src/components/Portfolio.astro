@@ -4,7 +4,13 @@ const dayNumber = currentDate.getDate();
 const monthNumber = currentDate.toLocaleString("en-US", { month: "short" });
 ---
 
-<div id="landing" class="font-display size-full">
+<div
+  id="loader-wrapper"
+  class="flex bg-neutral-950 justify-center items-center w-full h-full"
+>
+  <div class="loader"></div>
+</div>
+<div id="landing" class="font-display size-full hidden">
   <img
     src="/frames/ezgif-frame-001.webp"
     id="background"
@@ -233,27 +239,30 @@ const monthNumber = currentDate.toLocaleString("en-US", { month: "short" });
   <script>
     const img = document.getElementById("background");
     const header = document.getElementById("header");
+    const loaderWrapper = document.getElementById("loader-wrapper");
+    const landing = document.getElementById("landing");
 
     let images = [];
     const max_frames = 100;
-    let max_scroll = document.documentElement.scrollHeight - window.innerHeight;
 
     for (let i = 1; i <= max_frames; i++) {
       images[i] = new Image();
       images[i].src =
         `/frames/ezgif-frame-${i.toString().padStart(3, "0")}.webp`;
+      if (i === max_frames) {
+        loaderWrapper.style.display = "none";
+        landing.style.display = "block";
+      }
     }
 
     window.addEventListener("scroll", () => {
       requestAnimationFrame(updateAnimation);
     });
-    window.addEventListener("resize", () => {
-      max_scroll = document.documentElement.scrollHeight - window.innerHeight;
-    });
 
     const updateAnimation = () => {
       const scroll_position = window.scrollY;
-      const scroll_fraction = scroll_position / max_scroll;
+      const scroll_fraction =
+        scroll_position / document.documentElement.scrollHeight;
 
       const frame = Math.floor(scroll_fraction * max_frames) || 1;
 
