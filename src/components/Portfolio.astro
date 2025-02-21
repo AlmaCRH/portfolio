@@ -245,17 +245,24 @@ const monthNumber = currentDate.toLocaleString("en-US", { month: "short" });
     let images = [];
     const max_frames = 100;
 
-    for (let i = 1; i <= max_frames; i++) {
-      images[i] = new Image();
-      images[i].src =
-        `/frames/ezgif-frame-${i.toString().padStart(3, "0")}.webp`;
-      if (i === max_frames) {
-        loaderWrapper.style.display = "none";
-        landing.style.display = "block";
-      } else {
-        loaderWrapper.style.display = "flex";
-        landing.style.display = "none";
+    if (window.innerWidth > 1280) {
+      for (let i = 1; i <= max_frames; i++) {
+        images[i] = new Image();
+        images[i].src =
+          `/frames/ezgif-frame-${i.toString().padStart(3, "0")}.webp`;
+        if (i === max_frames) {
+          loaderWrapper.style.display = "none";
+          landing.style.display = "block";
+        } else {
+          loaderWrapper.style.display = "flex";
+          landing.style.display = "none";
+        }
       }
+    }
+
+    if (window.innerWidth < 1280) {
+      loaderWrapper.style.display = "none";
+      landing.style.display = "block";
     }
 
     window.addEventListener("scroll", () => {
@@ -268,8 +275,9 @@ const monthNumber = currentDate.toLocaleString("en-US", { month: "short" });
         scroll_position / document.documentElement.scrollHeight;
 
       const frame = Math.floor(scroll_fraction * max_frames) || 1;
-
-      img.src = images[frame].src;
+      if (window.innerWidth > 1280) {
+        img.src = images[frame].src;
+      }
 
       if (scroll_position !== 0) {
         header.style.backdropFilter = "blur(12px)";
