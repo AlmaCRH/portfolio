@@ -250,8 +250,16 @@ const monthNumber = currentDate.toLocaleString("en-US", { month: "short" });
       images[i].src =
         `/frames/ezgif-frame-${i.toString().padStart(3, "0")}.webp`;
       if (i === max_frames) {
-        loaderWrapper.style.display = "none";
-        landing.style.display = "block";
+        loaderWrapper?.classList.add("hidden");
+        loaderWrapper?.classList.remove("flex");
+        landing?.classList.add("block");
+        landing?.classList.remove("hidden");
+      } else {
+        loaderWrapper?.classList.add("flex");
+        loaderWrapper?.classList.remove("hidden");
+        landing?.classList.remove("block");
+
+        landing?.classList.add("hidden");
       }
     }
 
