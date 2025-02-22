@@ -13,12 +13,31 @@ html {
   scroll-behavior: smooth;
 }
 
-/* #loader-wrapper {
-  display: flex;
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#loader-wrapper {
+  animation: fadeOut 0.5s ease-out 1.5s forwards;
+  z-index: 100;
 }
 #landing {
-  display: none;
-} */
+  display: block;
+}
 
 .loader {
   position: relative;
