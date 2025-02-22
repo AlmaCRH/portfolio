@@ -245,26 +245,20 @@ const monthNumber = currentDate.toLocaleString("en-US", { month: "short" });
     let images = [];
     const max_frames = 100;
 
-    if (window.innerWidth > 1280) {
-    }
+    loaderWrapper.style.display = "flex";
+    landing.style.display = "none";
 
     const handleBackground = () => {
       if (window.innerWidth >= 1280) {
         for (let i = 1; i <= max_frames; i++) {
-          images[i] = new Image();
+          /*          images[i] = new Image();
           images[i].src =
-            `/frames/ezgif-frame-${i.toString().padStart(3, "0")}.webp`;
+            `/frames/ezgif-frame-${i.toString().padStart(3, "0")}.webp`; */
           if (i === max_frames) {
             loaderWrapper.style.display = "none";
             landing.style.display = "block";
-          } else {
-            loaderWrapper.style.display = "flex";
-            landing.style.display = "none";
           }
         }
-      } else {
-        loaderWrapper.style.display = "none";
-        landing.style.display = "block";
       }
     };
 
