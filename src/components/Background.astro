@@ -1,0 +1,45 @@
+<img
+  src="/frames/ezgif-frame-001.webp"
+  id="background"
+  loading="lazy"
+  alt="animation"
+  class="fixed top-0 left-0 size-full object-cover z-[-1]"
+/>
+
+<script>
+  const img = document.getElementById("background");
+
+  let images = [];
+  const max_frames = 100;
+
+  const handleBackground = () => {
+    if (window.innerWidth >= 1280) {
+      for (let i = 1; i <= max_frames; i++) {
+        images[i] = new Image();
+        images[i].src =
+          `/frames/ezgif-frame-${i.toString().padStart(3, "0")}.webp`;
+      }
+    }
+  };
+
+  const updateBackgroundAnimation = () => {
+    const scroll_position = window.scrollY;
+    const scroll_fraction =
+      scroll_position / document.documentElement.scrollHeight;
+
+    const frame = Math.floor(scroll_fraction * max_frames) || 1;
+    if (window.innerWidth > 1280) {
+      img.src = images[frame].src;
+    }
+  };
+
+  window.addEventListener("scroll", () => {
+    requestAnimationFrame(updateBackgroundAnimation);
+  });
+
+  window.addEventListener("resize", () => {
+    handleBackground();
+  });
+
+  handleBackground();
+</script>

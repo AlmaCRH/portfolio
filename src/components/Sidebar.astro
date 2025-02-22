@@ -1,0 +1,50 @@
+<button id="menu" class="w-10 space-y-2 md:hidden ml-auto">
+  <div class="border-1 border-white"></div>
+  <div class="border-1 border-white"></div>
+  <div class="border-1 border-white"></div>
+</button>
+<div
+  id="sidebar"
+  class="w-[200px] h-screen fixed top-0 right-[-200px] bg-[#2d2d2d] md:hidden"
+>
+  <ul class="flex flex-col p-5 space-y-5">
+    <li class="nav-text text-2xl">
+      <a
+        class="btn line-btn-dark btn-icon btn-radius"
+        href="/cv/AlmaCruzResume.pdf"
+      >
+        RESUME
+      </a>
+    </li>
+    <li class="nav-text text-2xl">
+      <a href="#about-section">ABOUT</a>
+    </li>
+    <li class="nav-text text-2xl">
+      <a href="#works-section">WORKS</a>
+    </li>
+    <li class="nav-text text-2xl">
+      <a href="#contact-section">CONTACT</a>
+    </li>
+  </ul>
+</div>
+
+<script>
+  const menu = document.getElementById("menu");
+  const sidebar = document.getElementById("sidebar");
+
+  window.addEventListener("resize", () => {
+    sidebar.classList.remove("closed", "opened");
+  });
+
+  menu.addEventListener("click", (e) => {
+    e.stopPropagation();
+    sidebar.classList.remove("closed");
+    sidebar.classList.add("opened");
+  });
+  window.addEventListener("click", (e) => {
+    if (!sidebar.contains(e.target) && e.target !== menu) {
+      sidebar.classList.add("closed");
+      sidebar.classList.remove("opened");
+    }
+  });
+</script>

@@ -1,0 +1,56 @@
+---
+import Sidebar from "../components/Sidebar.astro";
+---
+
+<header id="header" class="p-4 pb-0 fixed w-full z-10">
+  <nav
+    class="flex md:justify-between items-center m-1 border-b-1 border-white p-4 w-full"
+  >
+    <div>
+      <a href="#landing" class="sm:p-2"
+        ><h6 class="font-bebas nav-text text-2xl">Alma Cruz Hernández</h6></a
+      >
+      <h6 class="text-white font-bebas hidden md:inline md:text-lg">
+        FULL STACK WEB DEVELOPER
+      </h6>
+    </div>
+    <Sidebar />
+    <div>
+      <ul class="hidden md:inline">
+        <li class="nav-text text-md md:text-lg">
+          <a
+            class="btn line-btn-dark btn-icon btn-radius text-md sm:text-lg"
+            href="/cv/AlmaCruzResume.pdf"
+          >
+            resume
+          </a>
+        </li>
+        <li class="nav-text text-md sm:text-lg">
+          <a href="#about-section">about</a>
+        </li>
+        <li class="nav-text text-md sm:text-lg">
+          <a href="#works-section">works</a>
+        </li>
+        <li class="nav-text text-md sm:text-lg">
+          <a href="#contact-section">contact</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<script>
+  const header = document.getElementById("header");
+  const updateAnimation = () => {
+    const scroll_position = window.scrollY;
+
+    if (scroll_position !== 0) {
+      header.style.backdropFilter = "blur(12px)";
+    } else {
+      header.style.backdropFilter = "blur(0px)";
+    }
+  };
+  window.addEventListener("scroll", () => {
+    requestAnimationFrame(updateAnimation);
+  });
+</script>
