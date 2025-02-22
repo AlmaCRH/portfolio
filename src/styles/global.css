@@ -70,6 +70,32 @@ html {
   box-shadow: 0 0 0 0 #fff;
 }
 
+.closed {
+  animation: close 0.75s ease-out forwards;
+}
+
+.opened {
+  animation: open 0.75s ease-in forwards;
+}
+
+@keyframes close {
+  from {
+    right: 0px;
+  }
+  to {
+    right: -200;
+  }
+}
+
+@keyframes open {
+  from {
+    right: -200;
+  }
+  to {
+    right: 0px;
+  }
+}
+
 @keyframes pulsIn {
   0% {
     box-shadow: inset 0 0 0 1rem #fdf9ad;

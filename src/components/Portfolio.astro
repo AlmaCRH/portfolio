@@ -21,23 +21,50 @@ const monthNumber = currentDate.toLocaleString("en-US", { month: "short" });
   />
   <header id="header" class="p-4 pb-0 fixed w-full z-10">
     <nav
-      class="flex justify-between items-center m-1 border-b-1 border-white p-4"
+      class="flex md:justify-between items-center m-1 border-b-1 border-white p-4 w-full"
     >
       <div>
         <a href="#landing" class="sm:p-2"
-          ><h6 class="font-bebas nav-text text-md sm:text-2xl">
-            Alma Cruz Hernández
-          </h6></a
+          ><h6 class="font-bebas nav-text text-2xl">Alma Cruz Hernández</h6></a
         >
-        <h6 class="text-white font-bebas hidden sm:inline sm:text-lg">
+        <h6 class="text-white font-bebas hidden md:inline md:text-lg">
           FULL STACK WEB DEVELOPER
         </h6>
       </div>
-      <div>
-        <ul>
-          <li class="nav-text text-md sm:text-lg">
+      <button id="menu" class="w-10 space-y-2 md:hidden ml-auto">
+        <div class="border-1 border-white"></div>
+        <div class="border-1 border-white"></div>
+        <div class="border-1 border-white"></div>
+      </button>
+      <div
+        id="sidebar"
+        class="w-[200px] h-screen fixed top-0 right-[-200px] bg-[#2d2d2d] md:hidden"
+      >
+        <ul class="flex flex-col p-5 space-y-5">
+          <li class="nav-text text-2xl">
             <a
               class="btn line-btn-dark btn-icon btn-radius"
+              href="/cv/AlmaCruzResume.pdf"
+            >
+              RESUME
+            </a>
+          </li>
+          <li class="nav-text text-2xl">
+            <a href="#about-section">ABOUT</a>
+          </li>
+          <li class="nav-text text-2xl">
+            <a href="#works-section">WORKS</a>
+          </li>
+          <li class="nav-text text-2xl">
+            <a href="#contact-section">CONTACT</a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <ul class="hidden md:inline">
+          <li class="nav-text text-md md:text-lg">
+            <a
+              class="btn line-btn-dark btn-icon btn-radius text-md sm:text-lg"
               href="/cv/AlmaCruzResume.pdf"
             >
               resume
@@ -236,8 +263,8 @@ const monthNumber = currentDate.toLocaleString("en-US", { month: "short" });
   <script>
     const img = document.getElementById("background");
     const header = document.getElementById("header");
-    const loaderWrapper = document.getElementById("loader-wrapper");
-    const landing = document.getElementById("landing");
+    const menu = document.getElementById("menu");
+    const sidebar = document.getElementById("sidebar");
 
     let images = [];
     const max_frames = 100;
@@ -274,9 +301,22 @@ const monthNumber = currentDate.toLocaleString("en-US", { month: "short" });
     });
 
     window.addEventListener("resize", () => {
+      sidebar.classList.remove("closed", "opened");
+
       handleBackground();
     });
 
+    menu.addEventListener("click", (e) => {
+      e.stopPropagation();
+      sidebar.classList.remove("closed");
+      sidebar.classList.add("opened");
+    });
+    window.addEventListener("click", (e) => {
+      if (!sidebar.contains(e.target) && e.target !== menu) {
+        sidebar.classList.add("closed");
+        sidebar.classList.remove("opened");
+      }
+    });
     handleBackground();
   </script>
 </div>
