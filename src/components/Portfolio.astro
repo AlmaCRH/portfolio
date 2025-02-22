@@ -246,28 +246,27 @@ const monthNumber = currentDate.toLocaleString("en-US", { month: "short" });
     const max_frames = 100;
 
     if (window.innerWidth > 1280) {
-      for (let i = 1; i <= max_frames; i++) {
-        images[i] = new Image();
-        images[i].src =
-          `/frames/ezgif-frame-${i.toString().padStart(3, "0")}.webp`;
-        if (i === max_frames) {
-          loaderWrapper.style.display = "none";
-          landing.style.display = "block";
-        } else {
-          loaderWrapper.style.display = "flex";
-          landing.style.display = "none";
+    }
+
+    const handleBackground = () => {
+      if (window.innerWidth >= 1280) {
+        for (let i = 1; i <= max_frames; i++) {
+          images[i] = new Image();
+          images[i].src =
+            `/frames/ezgif-frame-${i.toString().padStart(3, "0")}.webp`;
+          if (i === max_frames) {
+            loaderWrapper.style.display = "none";
+            landing.style.display = "block";
+          } else {
+            loaderWrapper.style.display = "flex";
+            landing.style.display = "none";
+          }
         }
+      } else {
+        loaderWrapper.style.display = "none";
+        landing.style.display = "block";
       }
-    }
-
-    if (window.innerWidth < 1280) {
-      loaderWrapper.style.display = "none";
-      landing.style.display = "block";
-    }
-
-    window.addEventListener("scroll", () => {
-      requestAnimationFrame(updateAnimation);
-    });
+    };
 
     const updateAnimation = () => {
       const scroll_position = window.scrollY;
@@ -285,5 +284,15 @@ const monthNumber = currentDate.toLocaleString("en-US", { month: "short" });
         header.style.backdropFilter = "blur(0px)";
       }
     };
+
+    window.addEventListener("scroll", () => {
+      requestAnimationFrame(updateAnimation);
+    });
+
+    window.addEventListener("resize", () => {
+      handleBackground();
+    });
+
+    handleBackground();
   </script>
 </div>
