@@ -198,42 +198,36 @@ const monthNumber = currentDate.toLocaleString("en-US", { month: "short" });
   </main>
 </div>
 
-<script>
+<script is:inline>
   import jobsExperience from "../components/jobsExperience.js";
   const container = document.getElementById("landing");
 
-  jobsExperience.forEach(
-    (jobExperience: {
-      title: string;
-      img: string;
-      text: string;
-      link: string;
-    }) => {
-      const { title, img, text, link } = jobExperience;
-      const cardWrapper = document.createElement("div");
+  jobsExperience.forEach((jobExperience) => {
+    const { title, img, text, link } = jobExperience;
+    const cardWrapper = document.createElement("div");
 
-      cardWrapper.classList.add(
-        "work-card",
-        "max-w-sm",
-        "bg-white",
-        "border",
-        "border-gray-200",
-        "rounded-lg",
-        "shadow-sm",
-        "dark:bg-[#121212]",
-        "dark:border-[#121212]",
-        "fixed",
-        "top-1/2",
-        "left-1/2",
-        "transform",
-        "-translate-x-1/2",
-        "-translate-y-1/2"
-      );
-      cardWrapper.style.display = "none";
+    cardWrapper.classList.add(
+      "work-card",
+      "max-w-sm",
+      "bg-white",
+      "border",
+      "border-gray-200",
+      "rounded-lg",
+      "shadow-sm",
+      "dark:bg-[#121212]",
+      "dark:border-[#121212]",
+      "fixed",
+      "top-1/2",
+      "left-1/2",
+      "transform",
+      "-translate-x-1/2",
+      "-translate-y-1/2",
+      "hidden"
+    );
 
-      cardWrapper.dataset.id = title;
+    cardWrapper.dataset.id = title;
 
-      cardWrapper.innerHTML = `
+    cardWrapper.innerHTML = `
       <img class="rounded-t-lg" src="${img}" alt="${title}" />
     <div class="p-5 bg-[#121212] rounded-lg">
       <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">${title}</h5>
@@ -242,21 +236,20 @@ const monthNumber = currentDate.toLocaleString("en-US", { month: "short" });
     </div>
   `;
 
-      container?.appendChild(cardWrapper);
-    }
-  );
+    container?.appendChild(cardWrapper);
+  });
 
   document.querySelectorAll("#works-section span").forEach((span) => {
     span.addEventListener("click", (e) => {
       e.stopPropagation();
-      const id = (e.target as HTMLSpanElement).dataset.id;
+      const id = e.target.dataset.id;
 
       document.querySelectorAll(".work-card").forEach((card) => {
-        card.style.display = "none";
+        card.classList.add("hidden");
       });
       const cardToShow = document.querySelector(`.work-card[data-id="${id}"]`);
       if (cardToShow) {
-        cardToShow.style.display = "fixed";
+        cardToShow.classList.remove("hidden");
       }
     });
   });
@@ -264,8 +257,8 @@ const monthNumber = currentDate.toLocaleString("en-US", { month: "short" });
   window.addEventListener("click", (e) => {
     const showedCard = document.querySelector(".work-card:not(.hidden)");
 
-    if (!showedCard?.contains(e.target as HTMLSpanElement)) {
-      showedCard.style.display = "none";
+    if (!showedCard?.contains(e.target)) {
+      showedCard?.classList.add("hidden");
     }
   });
 </script>
