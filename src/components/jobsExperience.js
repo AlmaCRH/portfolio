@@ -21,19 +21,19 @@ const jobsExperience = [
     title: "AfricaNdoto Frontend",
     img: "/workImages/africandotoFront.webp",
     text: "Frontend application to solve the problem of the NGO to get more volunteers and donors and gain fiability through transparency. Made with React, CSS and Material UI.",
-    link: "https://reboot.academy/talent",
+    link: "https://github.com/AfricaNdoto-Project/AN-FrontEnd",
   },
   {
     title: "AfricaNdoto Backend",
     img: "/workImages/africandotoBack.webp",
     text: "Backend application to help this NGO with their problems of managing the people associated, the donations and their projects. Made with Node.js, Express and MySQL.",
-    link: "https://reboot.academy/talent",
+    link: "https://github.com/AfricaNdoto-Project/AN-Backend-DB",
   },
   {
     title: "Demons Defender",
     img: "/workImages/demonsDefender.webp",
     text: "Web game based on the tower defense genre, made with pure HTML, CSS and JavaScript.",
-    link: "https://reboot.academy/talent",
+    link: "https://nemechix.github.io/Tower-defense/",
   },
 ];
 
