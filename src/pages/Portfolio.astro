@@ -248,7 +248,7 @@ const monthNumber = currentDate.toLocaleString("en-US", { month: "short" });
   document.querySelectorAll("#works-section span").forEach((span) => {
     span.addEventListener("click", (e) => {
       e.stopPropagation();
-      const id = (e.target as HTMLSpanElement).dataset.id;
+      const id = e.target.dataset.id;
 
       document.querySelectorAll(".work-card").forEach((card) => {
         card.classList.add("hidden");
