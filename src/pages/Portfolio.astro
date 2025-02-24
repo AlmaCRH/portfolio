@@ -227,9 +227,9 @@ const monthNumber = currentDate.toLocaleString("en-US", { month: "short" });
         "left-1/2",
         "transform",
         "-translate-x-1/2",
-        "-translate-y-1/2",
-        "hidden"
+        "-translate-y-1/2"
       );
+      cardWrapper.style.display = "none";
 
       cardWrapper.dataset.id = title;
 
@@ -245,20 +245,18 @@ const monthNumber = currentDate.toLocaleString("en-US", { month: "short" });
       container?.appendChild(cardWrapper);
     }
   );
-  document.querySelectorAll(".work-card").forEach((card) => {
-    console.log("Card detectada en el DOM:", card); // Ver si existen
-  });
+
   document.querySelectorAll("#works-section span").forEach((span) => {
     span.addEventListener("click", (e) => {
       e.stopPropagation();
       const id = (e.target as HTMLSpanElement).dataset.id;
 
       document.querySelectorAll(".work-card").forEach((card) => {
-        card.classList.add("hidden");
+        card.style.display = "none";
       });
       const cardToShow = document.querySelector(`.work-card[data-id="${id}"]`);
       if (cardToShow) {
-        cardToShow.classList.remove("hidden");
+        cardToShow.style.display = "fixed";
       }
     });
   });
@@ -267,7 +265,7 @@ const monthNumber = currentDate.toLocaleString("en-US", { month: "short" });
     const showedCard = document.querySelector(".work-card:not(.hidden)");
 
     if (!showedCard?.contains(e.target as HTMLSpanElement)) {
-      showedCard?.classList.add("hidden");
+      showedCard.style.display = "none";
     }
   });
 </script>
