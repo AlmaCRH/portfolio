@@ -228,7 +228,6 @@ const monthNumber = currentDate.toLocaleString("en-US", { month: "short" });
         "transform",
         "-translate-x-1/2",
         "-translate-y-1/2",
-        "z-100",
         "hidden"
       );
 
@@ -246,6 +245,9 @@ const monthNumber = currentDate.toLocaleString("en-US", { month: "short" });
       container?.appendChild(cardWrapper);
     }
   );
+  document.querySelectorAll(".work-card").forEach((card) => {
+    console.log("Card detectada en el DOM:", card); // Ver si existen
+  });
   document.querySelectorAll("#works-section span").forEach((span) => {
     span.addEventListener("click", (e) => {
       e.stopPropagation();
