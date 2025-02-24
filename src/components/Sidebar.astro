@@ -33,18 +33,18 @@
   const sidebar = document.getElementById("sidebar");
 
   window.addEventListener("resize", () => {
-    sidebar.classList.remove("closed", "opened");
+    sidebar?.classList.remove("closed", "opened");
   });
 
-  menu.addEventListener("click", (e) => {
+  menu?.addEventListener("click", (e) => {
     e.stopPropagation();
-    sidebar.classList.remove("closed");
-    sidebar.classList.add("opened");
+    sidebar?.classList.remove("closed");
+    sidebar?.classList.add("opened");
   });
   window.addEventListener("click", (e) => {
-    if (!sidebar.contains(e.target) && e.target !== menu) {
-      sidebar.classList.add("closed");
-      sidebar.classList.remove("opened");
+    if (!sidebar?.contains(e.target as HTMLElement) && e.target !== menu) {
+      sidebar?.classList.add("closed");
+      sidebar?.classList.remove("opened");
     }
   });
 </script>

@@ -43,11 +43,12 @@ import Sidebar from "../components/Sidebar.astro";
   const header = document.getElementById("header");
   const updateAnimation = () => {
     const scroll_position = window.scrollY;
-
-    if (scroll_position !== 0) {
-      header.style.backdropFilter = "blur(12px)";
-    } else {
-      header.style.backdropFilter = "blur(0px)";
+    if (header) {
+      if (scroll_position !== 0) {
+        header.style.backdropFilter = "blur(12px)";
+      } else {
+        header.style.backdropFilter = "blur(0px)";
+      }
     }
   };
   window.addEventListener("scroll", () => {

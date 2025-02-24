@@ -1,6 +1,7 @@
 ---
 import Background from "../components/Background.astro";
 import Navbar from "../components/Navbar.astro";
+
 const currentDate = new Date();
 const dayNumber = currentDate.getDate();
 const monthNumber = currentDate.toLocaleString("en-US", { month: "short" });
@@ -86,43 +87,46 @@ const monthNumber = currentDate.toLocaleString("en-US", { month: "short" });
         >
         <div class="text-center mt-5">
           <span
+            data-id="Edukami.ai"
             class="text-white font-bebas text-7xl cursor-pointer hover:text-[#fffa9d] active:text-[#fffa9d]"
-            ><a href="https://edukami.ai/">Edukami.ai</a></span
+            >Edukami.ai</span
           >
         </div>
         <div class="text-center mt-5">
           <span
+            data-id="Reboot Talent"
             class="text-white font-bebas text-7xl cursor-pointer hover:text-[#fffa9d] active:text-[#fffa9d]"
-            ><a href="https://reboot.academy/talent">Reboot Talent</a></span
+            >Reboot Talent</span
           >
         </div>
         <div class="text-center mt-5">
           <span
+            data-id="WISE-C"
             class="text-white font-bebas text-7xl cursor-pointer hover:text-[#fffa9d] active:text-[#fffa9d]"
-            ><a href="https://wisecanarias.com/">WISE-C</a></span
+            >WISE-C</span
           >
         </div>
         <div class="text-center mt-5">
           <span
+            data-id="AfricaNdoto Frontend"
             class="text-white font-bebas text-7xl cursor-pointer hover:text-[#fffa9d] active:text-[#fffa9d]"
-            ><a href="https://africandoto.netlify.app/">AfricaNdoto FrontEnd</a
-            ></span
+            >AfricaNdoto FrontEnd</span
           >
         </div>
         <div class="text-center mt-5">
           <span
+            data-id="AfricaNdoto Backend"
             class="text-white font-bebas text-7xl cursor-pointer hover:text-[#fffa9d] active:text-[#fffa9d]"
-            ><a href="https://github.com/AfricaNdoto-Project/AN-Backend-DB"
-              >AfricaNdoto BackEnd</a
-            ></span
+          >
+            AfricaNdoto BackEnd</span
           >
         </div>
         <div class="text-center mt-5">
           <span
+            data-id="Demons Defender"
             class="text-white font-bebas text-7xl cursor-pointer hover:text-[#fffa9d]"
-            ><a href="https://nemechix.github.io/Tower-defense/"
-              >Demons Defender</a
-            ></span
+          >
+            Demons Defender</span
           >
         </div>
         <div class="flex justify-center">
@@ -192,6 +196,75 @@ const monthNumber = currentDate.toLocaleString("en-US", { month: "short" });
       </section>
     </div>
   </main>
-
-  <script></script>
 </div>
+
+<script>
+  import jobsExperience from "../components/jobsExperience.js";
+  const container = document.getElementById("landing");
+
+  jobsExperience.forEach(
+    (jobExperience: {
+      title: string;
+      img: string;
+      text: string;
+      link: string;
+    }) => {
+      const { title, img, text, link } = jobExperience;
+      const cardWrapper = document.createElement("div");
+
+      cardWrapper.classList.add(
+        "work-card",
+        "max-w-sm",
+        "bg-white",
+        "border",
+        "border-gray-200",
+        "rounded-lg",
+        "shadow-sm",
+        "dark:bg-[#121212]",
+        "dark:border-[#121212]",
+        "fixed",
+        "top-1/2",
+        "left-1/2",
+        "transform",
+        "-translate-x-1/2",
+        "-translate-y-1/2",
+        "hidden"
+      );
+
+      cardWrapper.dataset.id = title;
+
+      cardWrapper.innerHTML = `
+      <img class="rounded-t-lg" src="${img}" alt="${title}" />
+    <div class="p-5 bg-[#121212] rounded-lg">
+      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">${title}</h5>
+      <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">${text}</p>
+      <a href="${link}" class="inline-flex items-center px-3 py-2 text-sm font-medium text-black bg-[#fffa9d] rounded-lg hover:bg-[#cbc887]">See the project</a>
+    </div>
+  `;
+
+      container?.appendChild(cardWrapper);
+    }
+  );
+  document.querySelectorAll("#works-section span").forEach((span) => {
+    span.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const id = (e.target as HTMLSpanElement).dataset.id;
+
+      document.querySelectorAll(".work-card").forEach((card) => {
+        card.classList.add("hidden");
+      });
+      const cardToShow = document.querySelector(`.work-card[data-id="${id}"]`);
+      if (cardToShow) {
+        cardToShow.classList.remove("hidden");
+      }
+    });
+  });
+
+  window.addEventListener("click", (e) => {
+    const showedCard = document.querySelector(".work-card:not(.hidden)");
+
+    if (!showedCard?.contains(e.target as HTMLSpanElement)) {
+      showedCard?.classList.add("hidden");
+    }
+  });
+</script>

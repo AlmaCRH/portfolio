@@ -7,9 +7,9 @@
 />
 
 <script>
-  const img = document.getElementById("background");
+  const img = document.getElementById("background") as HTMLImageElement;
 
-  let images = [];
+  let images: HTMLImageElement[] = [];
   const max_frames = 100;
 
   const handleBackground = () => {
