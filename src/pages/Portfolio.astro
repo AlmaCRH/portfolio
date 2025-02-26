@@ -2,6 +2,7 @@
 import Background from "../components/Background.astro";
 import Navbar from "../components/Navbar.astro";
 import Cards from "../components/Cards.astro";
+import linkedin from "../assets/linkedin.svg";
 
 const currentDate = new Date();
 const dayNumber = currentDate.getDate();
@@ -56,8 +57,10 @@ const monthNumber = currentDate.toLocaleString("en-US", { month: "short" });
       <div
         class="text-white flex flex-col text-start w-full font-display mt-5 sm:text-xl lg:text-wrap"
       >
-        <div class="uppercase text-end pr-1.5">I'm a full stack developer</div>
-        <span class="uppercase text-right lg:w-1/2 lg:self-end">
+        <div class="uppercase text-end pr-1.5 drop-shadow-2xl">
+          I'm a full stack developer
+        </div>
+        <span class="uppercase text-right lg:w-1/2 lg:self-end drop-shadow-2xl">
           based in Gran Canaria. With one year of experience in the industry and
           a passion for web development. I keep learning and improving my skills
           every day.</span
@@ -66,7 +69,7 @@ const monthNumber = currentDate.toLocaleString("en-US", { month: "short" });
         <span class="uppercase"></span>
         <a
           href="mailto:alma.cruz.dev@gmail.com?subject=Job Offer"
-          class="bg-[#f3f0b800] border-1 border-[#f3f0b8] text-[#f3f0b8] p-2.5 rounded-[50px] text-lg font-extrabold self-end mt-5 w-44 text-center cursor-pointer sm:w-52 sm:text-xl"
+          class="bg-[#f3f0b8] border-1 border-[#11100C] text-[#11100C] text-str p-2.5 rounded-[50px] text-lg font-extrabold self-end mt-5 w-44 text-center cursor-pointer sm:w-52 sm:text-xl"
           >CONTACT ME</a
         >
       </div>
@@ -76,7 +79,7 @@ const monthNumber = currentDate.toLocaleString("en-US", { month: "short" });
         <span class="line-about text-[#fffa9d] font-bebas text-7xl sm:text-8xl"
           >HELLO. I'M ALMA</span
         >
-        <p class="text-white sm:text-xl lg:w-1/2 lg:text-wrap">
+        <p class="text-white sm:text-xl lg:w-1/2 lg:text-wrap drop-shadow-2xl">
           I use my passion and skills to create digital experiences that are
           intuitive, efficient, and impactful, leveraging technology to solve
           real-world problems and enhance user interactions.
@@ -133,7 +136,7 @@ const monthNumber = currentDate.toLocaleString("en-US", { month: "short" });
         <div class="flex justify-center">
           <a
             href="mailto:alma.cruz.dev@gmail.com?subject=Job Offer"
-            class="bg-[#f3f0b800] border-1 border-[#f3f0b8] text-[#f3f0b8] p-2.5 rounded-[50px] text-lg font-extrabold self-end mt-5 w-44 cursor-pointer sm:w-52 sm:text-xl text-center"
+            class="bg-[#f3f0b8] border-1 border-[#11100C] text-[#11100C] text-str p-2.5 rounded-[50px] text-lg font-extrabold self-end mt-5 w-44 text-center cursor-pointer sm:w-52 sm:text-xl"
             >CONTACT ME</a
           >
         </div>
@@ -150,19 +153,24 @@ const monthNumber = currentDate.toLocaleString("en-US", { month: "short" });
           >I'm interested in</span
         >
         <div class="space-y-3 mt-5 w-full xl:w-1/2">
-          <button class="uppercase bg-[#fffa9d] border-1 rounded-4xl w-fit p-2"
+          <button
+            class="uppercase bg-transparent border-1 border-[#fffa9d] text-[#fffa9d] rounded-4xl w-fit p-2"
             >Frontend development</button
           >
-          <button class="uppercase bg-[#fffa9d] border-1 rounded-4xl w-fit p-2"
+          <button
+            class="uppercase bg-transparent border-1 border-[#fffa9d] text-[#fffa9d] rounded-4xl w-fit p-2"
             >Backend development</button
           >
-          <button class="uppercase bg-[#fffa9d] border-1 rounded-4xl w-fit p-2"
+          <button
+            class="uppercase bg-transparent border-1 border-[#fffa9d] text-[#fffa9d] rounded-4xl w-fit p-2"
             >Fullstack development</button
           >
-          <button class="uppercase bg-[#fffa9d] border-1 rounded-4xl w-fit p-2"
+          <button
+            class="uppercase bg-transparent border-1 border-[#fffa9d] text-[#fffa9d] rounded-4xl w-fit p-2"
             >Wordpress development</button
           >
-          <button class="uppercase bg-[#fffa9d] border-1 rounded-4xl w-fit p-2"
+          <button
+            class="uppercase bg-transparent border-1 border-[#fffa9d] text-[#fffa9d] rounded-4xl w-fit p-2"
             >Coffee</button
           >
         </div>
@@ -170,30 +178,62 @@ const monthNumber = currentDate.toLocaleString("en-US", { month: "short" });
         <div
           class="flex justify-center mt-5 items-center space-x-5 lg:justify-start 2xl:justify-end"
         >
-          <span class="text-white uppercase sm:text-xl"
-            >Are you minding a project?</span
+          <span class="text-white uppercase text-xl sm:text-2xl">HIRE ME!</span
           ><a
             href="mailto:alma.cruz.dev@gmail.com?subject=Job Offer"
-            class="bg-[#f3f0b800] border-1 border-[#f3f0b8] text-[#f3f0b8] p-2.5 rounded-[50px] text-lg font-extrabold self-end w-44 cursor-pointer sm:w-52 sm:text-xl text-center"
+            class="bg-[#f3f0b8] border-1 border-[#11100C] text-[#11100C] text-str p-2.5 rounded-[50px] text-lg font-extrabold self-endw-44 text-center cursor-pointer sm:w-52 sm:text-xl"
             >CONTACT ME</a
           >
         </div>
 
         <div class="w-full h-2 border-b-1 border-white mt-5 sm:mt-3"></div>
         <div
-          class="mt-1 space-x-5 mb-5 text-white font-extrabold uppercase 2xl:flex 2xl:justify-end"
+          class="mt-1 space-x-5 mb-5 text-white font-extrabold uppercase flex justify-end items-center"
         >
-          <span
-            ><a
+          <span class="inline-flex">
+            <a
               class="btn line-btn-dark btn-icon btn-radius"
               href="/cv/AlmaCruzResume.pdf"
+              target="_blank"
             >
               Resume
             </a>
           </span>
-          <span
-            ><a href="https://www.linkedin.com/in/almacrh/">Linkedin</a></span
-          ><span><a href="https://github.com/AlmaCRH">Github</a></span>
+          <span class="inline-flex">
+            <a href="https://www.linkedin.com/in/almacrh/" target="_blank">
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 800 800"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M566.667 437.667V560.9H495.233V445.9C495.233 417.033 484.9 397.333 459.033 397.333C439.3 397.333 427.533 410.6 422.367 423.467C420.5 428.067 420 434.467 420 440.867V560.9H348.534C348.534 560.9 349.5 366.167 348.534 346H420V376.433L419.534 377.133H420V376.433C429.5 361.767 446.433 340.933 484.4 340.933C531.4 340.933 566.667 371.667 566.667 437.667ZM273.767 242.367C249.333 242.367 233.333 258.433 233.333 279.5C233.333 300.167 248.867 316.667 272.833 316.667H273.3C298.233 316.667 313.733 300.133 313.733 279.5C313.267 258.433 298.233 242.367 273.767 242.367ZM237.567 560.9H309.033V346H237.567V560.9Z"
+                  fill="#FFFA9D"></path>
+                <path
+                  d="M400 666.667C470.724 666.667 538.552 638.572 588.562 588.562C638.571 538.552 666.666 470.724 666.666 400C666.666 329.276 638.571 261.448 588.562 211.438C538.552 161.429 470.724 133.333 400 133.333C329.275 133.333 261.448 161.429 211.438 211.438C161.428 261.448 133.333 329.276 133.333 400C133.333 470.724 161.428 538.552 211.438 588.562C261.448 638.572 329.275 666.667 400 666.667ZM400 733.333C215.9 733.333 66.6665 584.1 66.6665 400C66.6665 215.9 215.9 66.6667 400 66.6667C584.1 66.6667 733.333 215.9 733.333 400C733.333 584.1 584.1 733.333 400 733.333Z"
+                  fill="#FFFA9D"></path>
+              </svg>
+            </a>
+          </span>
+          <span class="inline-flex w-fit">
+            <a href="https://github.com/AlmaCRH" target="_blank">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 256 250"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clip-path="url(#clip0_43_5)">
+                  <path
+                    d="M128.001 0C57.317 0 0 57.307 0 128.001C0 184.555 36.676 232.536 87.535 249.461C93.932 250.646 96.281 246.684 96.281 243.303V219.473C60.497 227.215 52.983 204.37 52.983 204.37C47.16 189.575 38.77 185.64 38.77 185.64C27.157 177.696 39.646 177.86 39.646 177.86C52.499 178.762 59.267 191.05 59.267 191.05C70.684 210.618 89.212 204.961 96.516 201.69C97.665 193.418 100.982 187.77 104.643 184.574C76.212 181.338 46.325 170.362 46.325 121.316C46.325 107.341 51.325 95.922 59.513 86.958C58.184 83.734 53.803 70.716 60.753 53.084C60.753 53.084 71.502 49.644 95.963 66.205C106.173 63.369 117.123 61.947 128.001 61.898C138.879 61.947 149.838 63.368 160.067 66.205C184.498 49.645 195.232 53.085 195.232 53.085C202.199 70.715 197.816 83.735 196.487 86.958C204.694 95.922 209.66 107.341 209.66 121.316C209.66 170.479 179.716 181.304 151.213 184.473C155.804 188.445 159.895 196.235 159.895 208.177C159.895 225.303 159.747 239.087 159.747 243.303C159.747 246.71 162.051 250.701 168.539 249.443C219.37 232.5 256 184.537 256 128.002C256 57.307 198.691 0 128.001 0Z"
+                    fill="#FFFA9D"></path>
+                </g>
+              </svg>
+            </a>
+          </span>
         </div>
         <div class="text-center text-[#f3f0b8] mb-5">
           <span>Alma Cruz Hernández © 2025</span>
