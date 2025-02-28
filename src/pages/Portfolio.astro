@@ -1,6 +1,6 @@
 ---
 import Background from "../components/Background.astro";
-import Navbar from "../components/Navbar.astro";
+import Navbar from "../components/Navbar.vue";
 import Cards from "../components/Cards.astro";
 import linkedin from "../assets/linkedin.svg";
 
@@ -18,7 +18,7 @@ const monthNumber = currentDate.toLocaleString("en-US", { month: "short" });
 </div>
 <div id="landing" class="font-display size-full">
   <Background />
-  <Navbar />
+  <Navbar client:only />
   <main class="size-full">
     <div class="text-white absolute flex flex-row top-[18%] right-[20%]">
       <div class="inline-block">
@@ -193,7 +193,7 @@ const monthNumber = currentDate.toLocaleString("en-US", { month: "short" });
           <span class="inline-flex">
             <a
               class="btn line-btn-dark btn-icon btn-radius"
-              href="/cv/AlmaCruzResume.pdf"
+              href="/cv/CV _ Alma Cruz Hernández.pdf"
               target="_blank"
             >
               Resume
