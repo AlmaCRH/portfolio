@@ -4,6 +4,7 @@
     ref="menu"
     @click="openMenu"
     class="w-10 space-y-2 md:hidden ml-auto"
+    aria-label="Open menu"
   >
     <div class="border-1 border-white"></div>
     <div class="border-1 border-white"></div>
