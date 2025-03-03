@@ -5,7 +5,7 @@
     ref="workCard"
     class="work-card w-92 rounded-lg shadow-sm dark:bg-[#121212] dark:border-[#121212] fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
   >
-    <img class="rounded-t-lg" :src="img" :alt="title" />
+    <img class="rounded-t-lg" :src="img.src" :alt="title" />
     <div class="p-5 bg-[#121212] rounded-b-lg">
       <h5 class="mb-2 text-2xl font-bold tracking-tight text-white">
         {{ title }}
@@ -33,9 +33,9 @@
 const props = defineProps({
   title: String,
   text: String,
-  img: String,
+  img: Object,
   link: String,
-  id: String,
+  id: Number,
   isVisible: Boolean,
 });
 </script>

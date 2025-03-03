@@ -12,11 +12,11 @@
 
   <Card
     v-for="(job, index) in jobsExperience"
-    :id="job.id"
+    :id="index"
+    :img="images[index]"
     :key="job.title"
     :title="job.title"
     :text="job.text"
-    :img="job.img"
     :link="job.link"
     :isVisible="visibleCardId === job.title"
     @close="closeCard"
@@ -26,10 +26,18 @@
 <script setup>
 import Card from "./Card.vue";
 import jobsExperience from "./jobsExperience.js";
-import { ref, onMounted, onUnmounted } from "vue";
-
+import { ref, onMounted, onUnmounted, onBeforeMount } from "vue";
 const visibleCardId = ref(null);
 
+const img = ref(null);
+const images = ref([]);
+
+const handleBackground = () => {
+  for (let i = 0; i < jobsExperience.length; i++) {
+    images.value[i] = new Image();
+    images.value[i].src = jobsExperience[i].img;
+  }
+};
 const showCard = (id) => {
   visibleCardId.value = id;
 };
@@ -45,9 +53,12 @@ const handleClickOutside = (e) => {
   }
 };
 
-onMounted(() => {
-  window.addEventListener("click", handleClickOutside);
-});
+onBeforeMount(() => {
+  handleBackground();
+}),
+  onMounted(() => {
+    window.addEventListener("click", handleClickOutside);
+  });
 
 onUnmounted(() => {
   window.removeEventListener("click", handleClickOutside);
