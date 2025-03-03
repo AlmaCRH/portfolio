@@ -9,7 +9,7 @@
       class="flex md:justify-between items-center m-1 border-b-1 border-white p-4 w-full"
     >
       <div>
-        <a href="#landing" class="sm:p-2"
+        <a href="#" class="sm:p-2"
           ><h6 class="font-bebas nav-text text-2xl">Alma Cruz Hernández</h6></a
         >
         <h6 class="text-white font-bebas hidden md:inline md:text-lg">
