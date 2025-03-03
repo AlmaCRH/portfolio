@@ -15,7 +15,7 @@ const monthNumber = currentDate.toLocaleString("en-US", { month: "short" });
   <div class="text-white mt-5 pl-2">Loading...</div>
 </div>
 <div id="landing" class="font-display size-full">
-  <Background server:defer />
+  <Background client:only="vue" />
   <Navbar client:load />
   <main class="size-full">
     <div class="text-white absolute flex flex-row top-[18%] right-[20%]">
