@@ -1,9 +1,7 @@
 ---
-import Background from "../components/Background.astro";
-import Navbar from "../components/Navbar.astro";
-import Cards from "../components/Cards.astro";
-import linkedin from "../assets/linkedin.svg";
-
+import Background from "../components/Background.vue";
+import Navbar from "../components/Navbar.vue";
+import CardList from "../components/CardList.vue";
 const currentDate = new Date();
 const dayNumber = currentDate.getDate();
 const monthNumber = currentDate.toLocaleString("en-US", { month: "short" });
@@ -17,8 +15,8 @@ const monthNumber = currentDate.toLocaleString("en-US", { month: "short" });
   <div class="text-white mt-5 pl-2">Loading...</div>
 </div>
 <div id="landing" class="font-display size-full">
-  <Background />
-  <Navbar />
+  <Background server:defer />
+  <Navbar client:load />
   <main class="size-full">
     <div class="text-white absolute flex flex-row top-[18%] right-[20%]">
       <div class="inline-block">
@@ -89,50 +87,7 @@ const monthNumber = currentDate.toLocaleString("en-US", { month: "short" });
         <span class="uppercase text-[#fffa9d] text-2xl cursor-pointer"
           >Selected works</span
         >
-        <div class="text-center mt-5">
-          <span
-            data-id="Edukami.ai"
-            class="text-white font-bebas text-7xl cursor-pointer hover:text-[#fffa9d] active:text-[#fffa9d]"
-            >Edukami.ai</span
-          >
-        </div>
-        <div class="text-center mt-5">
-          <span
-            data-id="Reboot Talent"
-            class="text-white font-bebas text-7xl cursor-pointer hover:text-[#fffa9d] active:text-[#fffa9d]"
-            >Reboot Talent</span
-          >
-        </div>
-        <div class="text-center mt-5">
-          <span
-            data-id="WISE-C"
-            class="text-white font-bebas text-7xl cursor-pointer hover:text-[#fffa9d] active:text-[#fffa9d]"
-            >WISE-C</span
-          >
-        </div>
-        <div class="text-center mt-5">
-          <span
-            data-id="AfricaNdoto Frontend"
-            class="text-white font-bebas text-7xl cursor-pointer hover:text-[#fffa9d] active:text-[#fffa9d]"
-            >AfricaNdoto FrontEnd</span
-          >
-        </div>
-        <div class="text-center mt-5">
-          <span
-            data-id="AfricaNdoto Backend"
-            class="text-white font-bebas text-7xl cursor-pointer hover:text-[#fffa9d] active:text-[#fffa9d]"
-          >
-            AfricaNdoto BackEnd</span
-          >
-        </div>
-        <div class="text-center mt-5">
-          <span
-            data-id="Demons Defender"
-            class="text-white font-bebas text-7xl cursor-pointer hover:text-[#fffa9d] active:text-[#fffa9d]"
-          >
-            Demons Defender</span
-          >
-        </div>
+        <CardList client:idle />
         <div class="flex justify-center">
           <a
             href="mailto:alma@almacrh.com?subject=Job Offer"
@@ -140,7 +95,6 @@ const monthNumber = currentDate.toLocaleString("en-US", { month: "short" });
             >CONTACT ME</a
           >
         </div>
-        <Cards />
       </section>
       <section id="contact-section" class="mt-20 pb-2">
         <div
@@ -193,7 +147,7 @@ const monthNumber = currentDate.toLocaleString("en-US", { month: "short" });
           <span class="inline-flex">
             <a
               class="btn line-btn-dark btn-icon btn-radius"
-              href="/cv/AlmaCruzResume.pdf"
+              href="/cv/CV _ Alma Cruz Hernández.pdf"
               target="_blank"
             >
               Resume
@@ -242,3 +196,4 @@ const monthNumber = currentDate.toLocaleString("en-US", { month: "short" });
     </div>
   </main>
 </div>
+<script></script>
