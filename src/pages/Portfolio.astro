@@ -2,11 +2,15 @@
 import Background from "../components/Background.vue";
 import Navbar from "../components/Navbar.vue";
 import CardList from "../components/CardList.vue";
-const currentDate = new Date();
-const dayNumber = currentDate.getDate();
-const monthNumber = currentDate.toLocaleString("en-US", { month: "short" });
 ---
 
+<script>
+  const currentDate = new Date();
+  const dayNumber = currentDate.getDate();
+  const monthNumber = currentDate.toLocaleString("en-US", { month: "short" });
+  document.getElementById("month").textContent = monthNumber;
+  document.getElementById("day").textContent = dayNumber;
+</script>
 <div
   id="loader-wrapper"
   class="flex fixed bg-neutral-950 justify-center items-center w-full h-full flex-col"
@@ -20,11 +24,11 @@ const monthNumber = currentDate.toLocaleString("en-US", { month: "short" });
   <main class="size-full">
     <div class="text-white absolute flex flex-row top-[18%] right-[20%]">
       <div class="inline-block">
-        <span class="text-8xl font-display font-extrabold">{dayNumber}</span>
+        <span id="day" class="text-8xl font-display font-extrabold"></span>
       </div>
 
       <div class="flex flex-col justify-center w-fit">
-        <span class="text-lg block font-extrabold">{monthNumber}</span>
+        <span id="month" class="text-lg block font-extrabold"></span>
         <span class="text-md">Available</span>
         <span class="text-md">for work</span>
       </div>
