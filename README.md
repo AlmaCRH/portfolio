@@ -1,4 +1,4 @@
-# 📌 Alma's Portfolio
+# 🌸 Alma's Portfolio
 
 Welcome to my portfolio. Here you'll find information about my projects, the technologies I use, and how to contact me.
 
