@@ -1,6 +1,6 @@
 # 📌 Alma's Portfolio
 
-Welcome to my web development portfolio. Here, you'll find information about my projects, the technologies I use, and how to contact me.
+Welcome to my portfolio. Here, you'll find information about my projects, the technologies I use, and how to contact me.
 
 ## 🚀 Technologies
 
