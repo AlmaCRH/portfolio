@@ -8,8 +8,8 @@ import CardList from "../components/CardList.vue";
   const currentDate = new Date();
   const dayNumber = currentDate.getDate();
   const monthNumber = currentDate.toLocaleString("en-US", { month: "short" });
-  document.getElementById("month").textContent = monthNumber;
-  document.getElementById("day").textContent = dayNumber;
+  document.getElementById("month")!.textContent = monthNumber;
+  document.getElementById("day")!.textContent = dayNumber.toString();
 </script>
 <div
   id="loader-wrapper"
@@ -151,7 +151,7 @@ import CardList from "../components/CardList.vue";
           <span class="inline-flex">
             <a
               class="btn line-btn-dark btn-icon btn-radius"
-              href="/cv/CV _ Alma Cruz Hernández.pdf"
+              href="/cv/CV Alma Cruz Hernández.pdf"
               target="_blank"
             >
               Resume

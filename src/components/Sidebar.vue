@@ -39,7 +39,7 @@
         <a
           class="btn line-btn-dark btn-icon btn-radius"
           target="_blank"
-          href="/cv/CV _ Alma Cruz Hernández.pdf"
+          href="/cv/CV Alma Cruz Hernández.pdf"
         >
           RESUME
         </a>
