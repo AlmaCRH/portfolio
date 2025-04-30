@@ -1,5 +1,11 @@
 const jobsExperience = [
   {
+    title: "MansheAI",
+    img: "/workImages/mansheAI.webp",
+    text: "AI-powered code review bot that analyzes the files you commit. Made with Node.js, Github Actions and Codestral.",
+    link: "https://github.com/AlmaCRH/MansheAI-Action/",
+  },
+  {
     title: "Edukami.ai",
     img: "/workImages/edukami.webp",
     text: "Educational platform powered with AI that helps enterprises to optimize the learning experience of their employees. Made with Vue, TailwindCSS, Node.js, MongoDB, Express, openAI and FireBase.",
